@@ -1,14 +1,16 @@
-def prime_no(p_no):
-    if 1 < p_no < 1000:
-        for i in range(2, int(p_no / 2)):
-            if p_no % i != 0:
-                print("no is a prime no")
-                return i+1
-            else:
-                print("no is not a prime_no")
-                return i+1
-
-    return p_no
+def primes(x=0, y=1000):
+    for num in range(x, y + 1):
+        if num > 1:  # num should be greater than 1
+            for i in range(2, num):
+                if num % i == 0:
+                    break
+                else:
+                    print(num)
 
 
-prime_no(1777)
+primes()
+
+# def get_prime_nos(x: int = 0, y: int = None):
+#     if not y:
+#         y = int(input("insert max range to get prime nos: "))
+#     return primes(x, y)

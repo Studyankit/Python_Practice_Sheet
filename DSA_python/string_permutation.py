@@ -1,8 +1,15 @@
-def string_permutation(input_string: str):
-    string_list = []
-    for i in input_string:
-        string_list.append(i)
+def get_permutation(string, i=0):
+    if i == len(string):
+        print("".join(string))
 
-    for j in range(0, len(string_list)-1):
-        for k in range(1, len(string_list)):
+    for j in range(i, len(string)):
+        words = [c for c in string]
 
+        # swap
+        words[i], words[j] = words[j], words[i]
+
+        print(words)
+        get_permutation(words, i + 1)
+
+
+print(get_permutation('yup'))
